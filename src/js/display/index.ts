@@ -159,7 +159,9 @@ export default class Display {
       }
 
       // otherwise return to the calendar view
-      this._context._currentViewMode = this._context._minViewModeNumber;
+      if (!this._context._currentViewMode) {
+        this._context._currentViewMode = this._context._minViewModeNumber;
+      }
 
       if (!onlyClock) {
         if (this._hasTime) {
